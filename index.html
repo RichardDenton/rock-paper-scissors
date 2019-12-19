@@ -53,7 +53,6 @@
 
         for (round; round <=5; round ++) {
           playerChoice = prompt("Enter Rock,Paper or Scissors: ")
-          console.log(playerChoice);
           roundResult = playRound(playerChoice, computerPlay());
 
           if (roundResult[0] === "win") {
@@ -63,7 +62,7 @@
           }
 
           console.log("\nRound " + round);
-          console.log("The computer chose " + roundResult[2]);
+          console.log("You chose " + playerChoice + ", the computer chose " + roundResult[2]);
           console.log(roundResult[1]);
           console.log("Your score: " + playerScore);
           console.log("Computer score: " + computerScore);
