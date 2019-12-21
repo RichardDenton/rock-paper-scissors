@@ -47,13 +47,10 @@
       function game() {
         let playerScore = 0;
         let computerScore = 0;
-        let playerChoice;
-        let roundResult;
-        let round = 1;
 
-        for (round; round <=5; round ++) {
-          playerChoice = prompt("Enter Rock,Paper or Scissors: ")
-          roundResult = playRound(playerChoice, computerPlay());
+        for (let round=1; round <=5; round ++) {
+          let playerChoice = prompt("Enter Rock,Paper or Scissors: ")
+          let roundResult = playRound(playerChoice, computerPlay());
 
           if (roundResult[0] === "win") {
             playerScore += 1;
