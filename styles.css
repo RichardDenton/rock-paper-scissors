@@ -1,0 +1,52 @@
+body {
+    background-color:#55fff1;
+    font-family: 'Roboto Mono', monospace, arial, helvetica;
+}    
+
+h1 {
+    background-color: #ff555b;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 3px 3px #555;
+    border-radius: 5px;
+}
+
+#main {
+text-align: center;
+}
+
+#instructions {
+    font-size: 11px;
+}
+
+#buttons {
+    margin-top: 25px;
+}
+
+#endresults {
+    font-weight: bold;
+}
+
+#buttons button {
+    width: 150px;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #ffa755;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 2px 2px #56fff2;
+}
+
+#buttons button:hover {
+    position: relative;
+    top: -2px;
+    right: 2px;
+    box-shadow: 4px 4px;
+}
+
+#scores p {
+    display: inline;
+    margin-right: 25px;
+    margin-left: 25px;
+}
