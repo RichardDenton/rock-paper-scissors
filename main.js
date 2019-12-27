@@ -58,6 +58,7 @@ function swapButtons() {
   buttons.forEach(button => button.remove());
   buttons = document.createElement('button');
   buttons.textContent = 'New Game';
+  buttons.classList.add('newgamebutton');
   buttonDiv.appendChild(buttons);
   buttons.addEventListener("click", buttons => location.reload())
 }

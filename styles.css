@@ -28,12 +28,16 @@ text-align: center;
 }
 
 #buttons button {
-    width: 150px;
-    height: 50px;
+    /* width: 150px;
+    height: 50px; 
     margin-left: 20px;
-    margin-right: 20px;
-    background-color: #ffa755;
-    font-size: 18px;
+    margin-right: 20px; 
+    background-color: #ffa755; 
+    font-size: 18px; */
+    background-color: #ffea00;
+    margin-left: 10px;
+    margin-right: 10px; 
+    padding: 0px;
     border-radius: 5px;
     box-shadow: 2px 2px #56fff2;
 }
@@ -45,8 +49,26 @@ text-align: center;
     box-shadow: 4px 4px;
 }
 
+#scores {
+    margin: auto;
+    width: 400px;
+    border-style: double;
+}
+
 #scores p {
     display: inline;
     margin-right: 25px;
     margin-left: 25px;
+}
+
+.buttonicon {
+    max-width: 90px;
+    height: auto;
+}
+
+.newgamebutton {
+    width: 150px;
+    height: 50px;  
+    font-size: 18px;
+    font-weight: bold;
 }
