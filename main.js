@@ -37,7 +37,6 @@ function playRound(playerChoice, computerChoice) {
     }
   }
 function game(e) {
-  if (playerScore === 5 || computerScore ===5) resetGame();  
   let roundResult = playRound(this.id, computerPlay());
 
   if (roundResult[0] === "win") {
@@ -51,26 +50,27 @@ function game(e) {
   displayRound.textContent = `Round ${round}`;
   compChoice.textContent = `The computer chose ${roundResult[2]}`;
   roundActions.textContent = `Round ${round-1} result: ${roundResult[1]}`;
-  if (playerScore === 5) {
-    endResults.textContent = 'You win! Choose Rock, Paper or Scissors to start a new game'
-  } else if (computerScore === 5) {
-    endResults.textContent = 'You lose, better luck next time! Choose Rock, Paper or Scissors to start a new game'
-  }
+  if (playerScore === 5 || computerScore ===5) declareWinner();
   }
 
-
-function resetGame() {
-  playerScore = 0;
-  computerScore = 0;
-  round = 1;
-  pScore.textContent = `Your score ${playerScore}`;
-  cScore.textContent = `Computer score: ${computerScore}`;
-  displayRound.textContent = `Round ${round}`;
-  compChoice.textContent = '';
-  roundActions.textContent = '';
-  endResults.textContent = '';  
+function swapButtons() {
+  const buttonDiv = document.getElementById('buttons');
+  buttons.forEach(button => button.remove());
+  buttons = document.createElement('button');
+  buttons.textContent = 'New Game';
+  buttonDiv.appendChild(buttons);
+  buttons.addEventListener("click", buttons => location.reload())
 }
 
+function declareWinner() {
+  if (playerScore > computerScore) {
+    endResults.textContent = 'You win!'
+  } else {
+    endResults.textContent = 'You lose, better luck next time!'
+  }
+  swapButtons();
+}
+// Declare global variables and setup button event listeners
 let playerScore = 0;
 let computerScore = 0;
 let round = 1;
@@ -80,5 +80,5 @@ const displayRound=document.getElementById('round');
 const roundActions=document.getElementById('roundactions');
 const compChoice=document.getElementById('computerchoice');
 const endResults=document.getElementById('endresults');
-const buttons=document.querySelectorAll("button");
+let buttons=document.querySelectorAll("button");
 buttons.forEach(button => button.addEventListener("click", game));
